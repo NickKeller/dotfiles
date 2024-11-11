@@ -1,0 +1,23 @@
+[user]
+	name = Nick Keller
+	email = nikelle@microsoft.com
+	signingKey = /home/azureuser/.ssh/id_rsa.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[pull]
+	rebase = false
+[push]
+	autoSetupRemote = true
+[credential]
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
+	azreposCredentialType = oauth
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential "azrepos:org/msazure"]
+	username = nikelle@microsoft.com
+	azureAuthority = https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47
+[core]
+	editor = nvim
