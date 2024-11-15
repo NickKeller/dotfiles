@@ -36,6 +36,17 @@ return {
                 end
             end
 
+            local ts_ls_inlay_hints = {
+                includeInlayEnumMemberValueHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayParameterNameHints = "all",
+                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayVariableTypeHints = true,
+                includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+            }
+
             -- LSP servers and clients are able to communicate to each other what features they support.
             --  By default, Neovim doesn't support everything that is in the LSP Specification.
             --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
@@ -101,6 +112,17 @@ return {
                             staticcheck = true,
                         },
 
+                    },
+                },
+                ts_ls = {
+                    settings = {
+                        maxTsServerMemory = 12288,
+                        typescript = {
+                            inlayHints = ts_ls_inlay_hints,
+                        },
+                        javascript = {
+                            inlayHints = ts_ls_inlay_hints,
+                        },
                     },
                 },
             }
